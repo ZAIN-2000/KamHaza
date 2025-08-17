@@ -8,7 +8,7 @@ function Footer() {
         <div className="container">
             <div className="footer-content">
                 <div className="footer-section">
-                    <h3>ClassNameiFind</h3>
+                    <h3>KamHaza</h3>
                     <p>Buy and sell with confidence</p>
                     <div className="social-links">
                         <a href="#" target="_blank"><i className="fab fa-facebook"></i></a>
@@ -42,7 +42,7 @@ function Footer() {
                 </div>
             </div>
             <div className="footer-bottom">
-                <p>&copy; 2024 ClassNameiFind. All rights reserved.</p>
+                <p>&copy; 2025 KamHaza. All rights reserved.</p>
             </div>
         </div>
     </footer>

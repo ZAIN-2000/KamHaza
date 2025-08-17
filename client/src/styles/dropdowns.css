@@ -1,0 +1,108 @@
+/* === KamHaza unified dropdown (light/dark + alignment) === */
+:root {
+  --kh-grad: linear-gradient(135deg, #6a1b9a, #8000ff);
+  --kh-shadow: 0 18px 45px rgba(24, 39, 75, 0.2);
+  --kh-panel-bg: #fff;
+  --kh-panel-fg: #3a3f4b;
+  --kh-panel-hover: #eaebf0;
+  --kh-panel-border: #e9e9ef;
+
+  /* dark theme tokens */
+  --kh-panel-bg-dark: #1c1f27;
+  --kh-panel-fg-dark: #e8e9ef;
+  --kh-panel-hover-dark: #2a2f3a;
+  --kh-panel-border-dark: #2a2e36;
+}
+
+/* Trigger */
+.kh-dropdown-trigger {
+  font-weight: 800 !important;
+  letter-spacing: .2px;
+}
+
+/* Base panel look */
+.kh-menu {
+  min-width: 280px !important;
+  border-radius: 18px !important;
+  overflow: hidden;
+  animation: khDropFade 0.22s ease forwards;
+  padding: 6px 0;
+  box-shadow: var(--kh-shadow) !important;
+  border: 1px solid var(--kh-panel-border) !important;
+  background: var(--kh-panel-bg) !important;
+  color: var(--kh-panel-fg) !important;
+}
+
+/* Alignment helpers (nudge transform origin) */
+.kh-menu--left  { transform-origin: top left; }
+.kh-menu--right { transform-origin: top right; }
+
+/* Dark theme */
+.kh-menu--dark {
+  background: var(--kh-panel-bg-dark) !important;
+  color: var(--kh-panel-fg-dark) !important;
+  border-color: var(--kh-panel-border-dark) !important;
+  box-shadow: 0 18px 45px rgba(0,0,0,.35) !important;
+}
+.kh-menu--dark .p-menuitem-link:hover {
+  background: var(--kh-panel-hover-dark) !important;
+  color: var(--kh-panel-fg-dark) !important;
+}
+
+/* Rows */
+.kh-menu .p-menuitem-link {
+  padding: 1rem 1.25rem !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: inherit !important;
+  border-radius: 12px !important;
+  margin: 2px 8px;
+}
+
+/* Submenu chevron */
+.kh-menu .p-submenu-icon {
+  margin-left: .5rem;
+  font-size: 1rem;
+  opacity: .7;
+}
+
+/* Hover (light theme) */
+.kh-menu--light .p-menuitem-link:hover {
+  background: var(--kh-panel-hover) !important;
+  color: #2e3340 !important;
+}
+
+/* Submenu divider */
+.kh-menu .p-submenu-list {
+  border-left: 1px solid rgba(0,0,0,.06);
+  padding-left: 4px;
+}
+
+/* Animation */
+@keyframes khDropFade {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* —— Pill utilities (include only if not already present globally) —— */
+.pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 9999px; border: 0; cursor: pointer; user-select: none;
+  transition: transform .15s ease, box-shadow .25s ease, filter .2s ease;
+  text-decoration: none;
+}
+.pill--sm { padding: .45rem .9rem;  font-size: .85rem; font-weight: 700; }
+.pill--md { padding: .65rem 1.2rem; font-size: .95rem; font-weight: 800; }
+.pill--lg { padding: .8rem 1.6rem;  font-size: 1rem;  font-weight: 800; }
+
+.pill--primary {
+  background: var(--kh-grad);
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(128,0,255,.28);
+}
+.pill--primary:hover { filter: brightness(1.06); transform: translateY(-1px); }
+
+.pill--outline {
+  background: #fff; color: #6a1b9a; border: 2px solid rgba(106,27,154,.35);
+}
+.pill--ghost   { background: transparent; color: #6a1b9a; }

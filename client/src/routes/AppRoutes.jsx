@@ -1,34 +1,31 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import MainLayout from '../layouts/MainLayout.jsx';
+import { Routes, Route } from 'react-router-dom';
 import NavBar from '../pages/NavBar.jsx';
 import Dashboard from '../pages/Dashboard.jsx';
 import '../styles/globals.css';
-import '../styles/globals.css';
-import LoginPage from '../pages/Authentication/LoginPage.jsx';
-import RegistertionPage from '../pages/Authentication/RegistertionPage.jsx';
+import AuthPage from "../pages/Authentication/AuthPage.jsx";
 import AdminPannel from '../pages/AdminPannel.jsx';
 import ProductDetailsPage from '../pages/ProductDetailsPage.jsx';
+import UserProfileSetupPage from '../pages/UserProfileSetupPage.jsx';
+
 const AppRoutes = () => {
   return (
     <>
-   
-   <NavBar />
+      <NavBar />
 
-    <Routes>  
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/home" element={<Dashboard />} />
-      <Route path='/login' element={<LoginPage />} />
-      <Route path='/productDetails' element={<ProductDetailsPage />} />
+      <Routes>  
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/home" element={<Dashboard />} />
 
-      <Route path='/register' element={<RegistertionPage />} />
+        {/* Single page with Login + Register tabs */}
+        <Route path="/auth" element={<AuthPage />} />  
 
-      <Route path='/admin' element={<AdminPannel />} />
-
-      
-    </Routes>
+        <Route path="/productDetails" element={<ProductDetailsPage />} />
+        <Route path="/admin" element={<AdminPannel />} />
+        <Route path="/userProfileSetup" element={<UserProfileSetupPage />} />
+      </Routes>
     </>
   );
 };
 
-export default AppRoutes; 
+export default AppRoutes;

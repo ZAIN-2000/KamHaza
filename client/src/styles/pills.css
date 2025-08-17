@@ -1,0 +1,39 @@
+:root{
+  --kh-grad: linear-gradient(135deg, #6a1b9a, #8000ff);
+  --kh-pill-radius: 9999px;
+  --kh-focus: 0 0 0 3px rgba(128,0,255,.25);
+}
+
+/* Base pill */
+.pill{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  border-radius: var(--kh-pill-radius);
+  font-weight:700; letter-spacing:.2px; line-height:1;
+  border:0; text-decoration:none; cursor:pointer; user-select:none;
+  transition: transform .15s ease, box-shadow .25s ease, filter .2s ease, background .2s ease;
+}
+
+/* Sizes */
+.pill--sm{ padding:.45rem .9rem; font-size:.85rem; }
+.pill--md{ padding:.65rem 1.2rem; font-size:.95rem; }
+.pill--lg{ padding:.8rem 1.6rem; font-size:1rem; }
+
+/* Variants */
+.pill--primary{ background: var(--kh-grad); color:#fff; box-shadow: 0 4px 12px rgba(128,0,255,.28); }
+.pill--primary:hover{ filter:brightness(1.06); box-shadow:0 6px 18px rgba(128,0,255,.35); transform:translateY(-1px); }
+.pill--primary:focus-visible{ outline:none; box-shadow:0 6px 18px rgba(128,0,255,.35), var(--kh-focus); }
+
+.pill--outline{ background:#fff; color:#6a1b9a; border:2px solid rgba(106,27,154,.35); }
+.pill--outline:hover{ background:rgba(106,27,154,.06); }
+.pill--outline:focus-visible{ outline:none; box-shadow:var(--kh-focus); }
+
+.pill--ghost{ background:transparent; color:#6a1b9a; }
+.pill--ghost:hover{ background:rgba(128,0,255,.08); }
+.pill--ghost:focus-visible{ outline:none; box-shadow:var(--kh-focus); }
+
+/* PrimeReact Button compatibility */
+.p-button.pill{ border-radius:var(--kh-pill-radius); border:0; padding:0; background:transparent; }
+.p-button.pill .p-button-label{ font-weight:700; }
+.p-button.pill.pill--primary{ background:var(--kh-grad); color:#fff; box-shadow:0 4px 12px rgba(128,0,255,.28); }
+.p-button.pill.pill--primary:hover{ filter:brightness(1.06); box-shadow:0 6px 18px rgba(128,0,255,.35); transform:translateY(-1px); }
+.p-button.pill.pill--ghost{ background:transparent; color:#6a1b9a; }
